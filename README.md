@@ -1,5 +1,5 @@
 # KeyCommandAlertController
-This project contains wrappers for ```UIAlertController``` and ```UIAlertAction``` which allows adding a keyboard shortcut (known as ```key command```).
+This project contains wrappers for ```UIAlertController``` and ```UIAlertAction``` to easily add keyboard shortcuts (known as ```key command```).
 
 ![](readme-resources/example.gif)
 
