@@ -43,6 +43,7 @@ class KeyCommandAlertAction {
 	let keyShortcut: KeyCommandShortcut?
 	var uiKeyCommand: UIKeyCommand?
 	let actionHandler: ((UIAlertAction) -> Swift.Void)?
+	let title: String?
 	
 	public let alertAction: UIAlertAction
 	
@@ -65,6 +66,7 @@ class KeyCommandAlertAction {
 		}
 		
 		alertAction = UIAlertAction(title: displayTitle, style: style, handler: handler)
+		self.title = title
 		self.keyShortcut = keyShortcut
 		self.actionHandler = handler
 	}
@@ -100,7 +102,7 @@ class KeyCommandAlertController: UIAlertController {
 		
 		for keyCommand in keyCommandActions {
 			
-			if let keyShortcut = keyCommand.keyShortcut, let title = keyCommand.alertAction.title {
+			if let keyShortcut = keyCommand.keyShortcut, let title = keyCommand.title {
 				
 				let keyCmd = UIKeyCommand(input: keyShortcut.input, modifierFlags: keyShortcut.modifierFlags, action: #selector(didActiveKeyCommand(_:)), discoverabilityTitle: title)
 				
